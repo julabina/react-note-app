@@ -6,6 +6,20 @@ const rootReducer = combineReducers({
     noteReducer
 })
 
-const store = createStore(rootReducer, applyMiddleware(thunk));
+const localStorageMiddleware = ({ getState }) => {
+    return next => action => {
+      const result = next(action);
+      localStorage.setItem('notes', JSON.stringify(getState()));
+      return result;
+    };
+  };
+
+const persistedState = localStorage.getItem("notes") ? JSON.parse(localStorage.getItem('notes')) : {} 
+
+const store = createStore(rootReducer, persistedState, applyMiddleware(thunk, localStorageMiddleware));
+
+store.subscribe(()=>{
+    localStorage.setItem('notes', JSON.stringify(store.getState()))
+  }) 
 
 export default store;

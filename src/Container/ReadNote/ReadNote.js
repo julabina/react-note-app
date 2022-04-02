@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ModForm from '../../Components/ModForm/ModForm';
 import './ReadNote.css';
 
 const ReadNote = () => {
+
+    const {notes} = useSelector(state => ({
+        ...state.noteReducer
+    }))
 
     const [noteDatas, setNoteDatas] = useState({});
     const [modifyDatas, setModifyDatas] = useState(false);
@@ -19,19 +23,19 @@ const ReadNote = () => {
         if(!modifyDatas){
             const datas = location.state;
             setNoteDatas(datas);
-        }
+        } 
     }, [])
-
+    
     const deleteNote = () => {
-
+        
         dispatch ({
             type: 'DELETENOTE',
             payload: noteDatas.id
         })
 
-        navigate("/")
+        navigate("/") 
     }
-
+    
     const modifyNote = (tit, bod) => {
         const newObj = {
             ...noteDatas,

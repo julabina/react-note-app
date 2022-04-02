@@ -23,10 +23,11 @@
 
 .form-newNote input {
     height: 35px;
-    padding-left: 10px
+    padding-left: 10px;
 }
 
 .form-newNote textarea {
+    padding-left: 10px;
     resize: none;
     height: 400px
 }
