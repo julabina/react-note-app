@@ -22,6 +22,15 @@ function noteReducer(state = INITIAL_STATE, action) {
                 notes : newArr
             }
         }
+        case "DELETENOTE" : {
+            let newArrState = [
+                ...state.notes
+            ]
+            const newArr = newArrState.filter(el => el.id !== action.payload);
+            return {
+                notes: newArr
+            }
+        }
     }
 
     return state;

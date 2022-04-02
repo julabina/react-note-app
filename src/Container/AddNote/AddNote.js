@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './AddNote.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const AddNote = () => {
 
@@ -8,16 +9,26 @@ const AddNote = () => {
 
     const [inputDatas, setInputDatas] = useState({
         title: "",
-        body: ""
+        body: "",
+        id : ""
     });
 
     const updateInput = (e) => {
         if(e.target.classList.contains("inp-1")) {
-            const newObj = {
-                ...inputDatas,
-                title: e.target.value
+            if (inputDatas.id === "") {
+                const newObj = {
+                    ...inputDatas,
+                    title: e.target.value,
+                    id : uuidv4()
+                }
+                setInputDatas(newObj);
+            } else {
+                const newObj = {
+                    ...inputDatas,
+                    title: e.target.value,
+                }
+                setInputDatas(newObj);
             }
-            setInputDatas(newObj);
         } else if (e.target.classList.contains("inp-2")) {
             const newObj = {
                 ...inputDatas,
@@ -28,17 +39,17 @@ const AddNote = () => {
     }
 
     const submitNew = (e) => {
+        console.log(inputDatas);
         e.preventDefault();
         dispatch({
             type : "ADDNOTE",
             payload: inputDatas
         })
-
         setInputDatas({
             title: "",
-            body: ""
+            body: "",
+            id : ""
         })
-
     }
 
     return (
@@ -47,9 +58,9 @@ const AddNote = () => {
                 <form onSubmit={submitNew} className='form-newNote'> 
                     <h2>Add new note</h2>
                     <label htmlFor="newTitle">Title :</label>
-                    <input onChange={updateInput} type="text" id="newTitle" placeholder='Enter the title' value={inputDatas.title} className="inp-1"/>
+                    <input onChange={updateInput} type="text" id="newTitle" placeholder='Enter the title' value={inputDatas.title} className="inp-1" required/>
                     <label htmlFor="newBody">Note :</label>
-                    <textarea onChange={updateInput} id='newBody' placeholder='Enter the note' value={inputDatas.body} className="inp-2"/>
+                    <textarea onChange={updateInput} id='newBody' placeholder='Enter the note' value={inputDatas.body} className="inp-2" required/>
                     <button>Add</button>
                 </form>
             </section>
