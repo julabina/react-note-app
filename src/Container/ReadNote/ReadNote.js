@@ -33,7 +33,7 @@ const ReadNote = () => {
             payload: noteDatas.id
         })
 
-        navigate("/") 
+        navigate("react-note-app/") 
     }
     
     const modifyNote = (tit, bod) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Note from '../../Components/Note/Note';
 import { v4 as uuidv4 } from 'uuid';
@@ -12,28 +12,8 @@ const Home = () => {
         ...state.noteReducer
     }))
 
-   /*  const [firstLoad, setFirstLoad] = useState(true); */
-
     const dispatch = useDispatch();
     
-   /*  useEffect(() => {
-        console.log(firstLoad);
-        if(firstLoad) {
-            const datas = JSON.parse(localStorage.getItem('notes'));
-            if (datas) {
-                
-                dispatch({
-                    type : "LOADNOTES",
-                    payload : datas
-                })
-        
-            }
-
-            setFirstLoad(false);
-        } else {
-            localStorage.setItem("notes", JSON.stringify(notes));
-        }
-    },[]) */
 
     return (
         <main>

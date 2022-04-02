@@ -9,9 +9,9 @@ function App() {
     <>
     <Navbar />
     <Routes basename={process.env.PUBLIC_URL}>
-      <Route path="/" element={<Home />} />
-      <Route path="/addnote" element={<AddNote />} />
-      <Route path="/note/:note" element={<ReadNote />} />
+      <Route path="react-note-app/" element={<Home />} />
+      <Route path="react-note-app/addnote" element={<AddNote />} />
+      <Route path="react-note-app/note/:note" element={<ReadNote />} />
     </Routes>
     </>
   );

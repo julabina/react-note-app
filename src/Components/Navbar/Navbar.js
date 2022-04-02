@@ -8,12 +8,12 @@ const Navbar = () => {
             <div className="header-links">
                 <NavLink className={({isActive}) => {
                     return isActive ? "header-link header-link--active" : "header-link";
-                }} to="/">
+                }} to="react-note-app/">
                    <p className='header-links-name'>Home</p>
                 </NavLink>
                 <NavLink className={({isActive}) => {
                     return isActive ? "header-link header-link--active" : "header-link";
-                }} to="/addnote">
+                }} to="react-note-app/addnote">
                     <p className='header-links-name'>New note</p>
                 </NavLink>
             </div>

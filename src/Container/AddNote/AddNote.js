@@ -49,13 +49,6 @@ const AddNote = () => {
             body: "",
             id : ""
         })
-        /* const localDatas = JSON.parse(localStorage.getItem('notes'));
-        if (localDatas) {
-            localDatas.unshift(inputDatas);
-            localStorage.setItem("notes", JSON.stringify(localDatas));
-        } else {
-            localStorage.setItem("notes", JSON.stringify(inputDatas));
-        }  */
     }
 
     return (
