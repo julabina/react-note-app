@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import ModForm from '../../Components/ModForm/ModForm';
 import './ReadNote.css';
 
 const ReadNote = () => {
 
     const [noteDatas, setNoteDatas] = useState({});
+    const [modifyDatas, setModifyDatas] = useState(false);
 
     const navigate = useNavigate()
 
@@ -14,8 +16,10 @@ const ReadNote = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        const datas = location.state;
-        setNoteDatas(datas);
+        if(!modifyDatas){
+            const datas = location.state;
+            setNoteDatas(datas);
+        }
     }, [])
 
     const deleteNote = () => {
@@ -28,10 +32,28 @@ const ReadNote = () => {
         navigate("/")
     }
 
+    const modifyNote = (tit, bod) => {
+        const newObj = {
+            ...noteDatas,
+            title: tit,
+            body: bod
+        }
+        setNoteDatas(newObj);
+        toggleNote();
+    }
+    
+    const toggleNote = () => {
+        setModifyDatas(!modifyDatas);
+    }
+
     return (
+        <>
+        {modifyDatas ?
+            <ModForm title={noteDatas.title} body={noteDatas.body} id={noteDatas.id} func={modifyNote}/>
+        : 
         <main>
             <section className='note-btn-cont'>
-                <button className='note-btn-cont-btn'>Modify</button>
+                <button onClick={toggleNote} className='note-btn-cont-btn'>Modify</button>
                 <button onClick={deleteNote} className='note-btn-cont-btn'>Delete</button>
             </section>
             <section className="note-read">
@@ -39,6 +61,8 @@ const ReadNote = () => {
                 <p className='note-read-body'>{noteDatas.body}</p>
             </section>
         </main>
+        }
+        </>
     );
 };
 

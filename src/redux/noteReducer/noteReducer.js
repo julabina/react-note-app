@@ -31,6 +31,17 @@ function noteReducer(state = INITIAL_STATE, action) {
                 notes: newArr
             }
         }
+        case "MODIFYNOTE" : {
+            let newArrState = [
+                ...state.notes
+            ]
+            const payloadObj = action.payload;
+            const newArr = newArrState.filter(el => el.id !== payloadObj.id);
+            newArr.unshift(action.payload);
+            return {
+                notes : newArr
+            }
+        }
     }
 
     return state;

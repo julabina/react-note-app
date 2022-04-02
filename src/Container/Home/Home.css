@@ -6,3 +6,16 @@
     max-width: 1350px;
     margin: 0 auto 0;
 }
+
+.home-newNote-btn {
+    margin-top:200px;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    border : 2px solid #333;
+    border-radius: 8px
+}
+
+.home-newNote-btn:hover {
+    background-color: cyan;
+}

@@ -39,7 +39,6 @@ const AddNote = () => {
     }
 
     const submitNew = (e) => {
-        console.log(inputDatas);
         e.preventDefault();
         dispatch({
             type : "ADDNOTE",

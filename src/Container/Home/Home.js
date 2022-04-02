@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Note from '../../Components/Note/Note';
 import { getNotes } from '../../redux/noteReducer/noteReducer';
@@ -15,18 +15,17 @@ const Home = () => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        if(notes.length === 0) {
-           dispatch(getNotes());
-        }
-    }, [])
-
     return (
         <main>
             <section className='notes-container'>
+            { notes.length === 0 && 
+            <Link to="/addnote">
+                <button className='home-newNote-btn'>New note</button> 
+            </Link>
+            }
                 {notes.map(el => {
-                    return (
-                        <Link key={uuidv4()} to={"/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
+                        return (
+                            <Link key={uuidv4()} to={"/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
                             <Note>
                                 <h2>{el.title}</h2>
                                 <p>{el.body}</p>
@@ -34,6 +33,7 @@ const Home = () => {
                         </Link>
                     )
                 })}
+            
             </section>
         </main>
     );
