@@ -1,0 +1,29 @@
+.modalDeleteValidation {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background : rgba(0,0,0,0.485);
+}
+
+.modalDelete-container {
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #f3f3f3;
+    padding:30px;
+    border-radius: 7px;
+}
+
+.modalDelete-btnContainer {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.modalDelete-btn {
+    margin: 0 5px;
+    cursor: pointer;
+}

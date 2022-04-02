@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom';
+import DeleteModal from '../../Components/DeleteModal/DeleteModal';
 import ModForm from '../../Components/ModForm/ModForm';
 import './ReadNote.css';
 
@@ -58,7 +59,7 @@ const ReadNote = () => {
         <main>
             <section className='note-btn-cont'>
                 <button onClick={toggleNote} className='note-btn-cont-btn'>Modify</button>
-                <button onClick={deleteNote} className='note-btn-cont-btn'>Delete</button>
+                <DeleteModal func={deleteNote} />
             </section>
             <section className="note-read">
                 <h2 className='note-read-title'>{noteDatas.title}</h2>
