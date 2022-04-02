@@ -4,21 +4,32 @@
     height: 220px;
     border: 1px solid #888;
     border-radius: 3px;
-    text-overflow: ellipsis;
     overflow: hidden;
-    padding : 25px;
-    margin: 15px
+    margin: 15px;
 }
 
 .note h2 {
     font-size: 1.3em;
     font-weight: 600;
     margin-bottom: 10px;
+    padding : 0 20px;
 }
 
 .note p {
-    text-overflow: ellipsis;
     overflow: hidden;
-    height:137px;
-    line-height: 1.4
+    white-space: wrap;
+    height:157px;
+    text-overflow:ellipsis;
+    width:300px;
+    line-height: 1.4;
+    padding : 0 20px;
 }
+
+.top-card {
+    display: flex;
+    align-items: center;
+    justify-content:right;
+    height:30px;
+    margin-right:5px;
+}
+

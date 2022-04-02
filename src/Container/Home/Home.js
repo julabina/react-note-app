@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Note from '../../Components/Note/Note';
 import { v4 as uuidv4 } from 'uuid';
 import './Home.css';
@@ -10,10 +10,7 @@ const Home = () => {
 
     const {notes} = useSelector(state => ({
         ...state.noteReducer
-    }))
-
-    const dispatch = useDispatch();
-    
+    }))    
 
     return (
         <main>
@@ -25,12 +22,12 @@ const Home = () => {
             }
                 {notes.map(el => {
                         return (
-                            <Link key={uuidv4()} to={"/react-note-app/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
-                            <Note>
-                                <h2>{el.title}</h2>
-                                <p>{el.body}</p>
+                            <Note key={uuidv4()} id={el.id}>
+                                <Link to={"/react-note-app/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
+                                    <h2>{el.title}</h2>
+                                    <p>{el.body}</p>
+                                </Link>
                             </Note>
-                        </Link>
                     )
                 })}
             
