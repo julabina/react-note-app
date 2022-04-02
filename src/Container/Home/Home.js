@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Note from '../../Components/Note/Note';
-import { getNotes } from '../../redux/noteReducer/noteReducer';
 import { v4 as uuidv4 } from 'uuid';
 import './Home.css';
 import { Link } from 'react-router-dom';
