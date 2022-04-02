@@ -13,6 +13,15 @@ function noteReducer(state = INITIAL_STATE, action) {
                 notes: action.payload
             }
         }
+        case "ADDNOTE": {
+            let newArr = [
+                ...state.notes
+            ];
+            newArr.unshift(action.payload);
+            return {
+                notes : newArr
+            }
+        }
     }
 
     return state;

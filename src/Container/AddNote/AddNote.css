@@ -1,0 +1,46 @@
+.form-newNote {
+    position:absolute;
+    left: 50%;
+    top:40%;
+    display:flex;
+    flex-direction:column;
+    width: 600px;
+    transform: translate(-50%, -50%);
+
+}
+
+.form-newNote h2 {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.form-newNote label {
+    font-weight: 600;
+    margin: 15px 0 5px;
+}
+
+.form-newNote input {
+    height: 35px;
+    padding-left: 10px
+}
+
+.form-newNote textarea {
+    resize: none;
+    height: 400px
+}
+
+.form-newNote button {
+    width: auto;
+    height:30px;
+    margin: 20px 270px 0;
+    cursor: pointer;
+    background: transparent;
+    border : 2px solid #333;
+    border-radius: 8px
+}
+
+.form-newNote button:hover {
+    background-color: cyan;
+}

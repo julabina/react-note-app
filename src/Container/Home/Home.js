@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import Note from '../../Components/Note/Note';
 import { getNotes } from '../../redux/noteReducer/noteReducer';
 import { v4 as uuidv4 } from 'uuid';
+import './Home.css';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -21,15 +23,18 @@ const Home = () => {
 
     return (
         <main>
-            <h1>TEST</h1>
-            {notes.map(el => {
-                return (
-                <Note key={uuidv4()}>
-                        <h2>{el.title}</h2>
-                        <p>{el.body}</p>
-                </Note>
-                )
-            })}
+            <section className='notes-container'>
+                {notes.map(el => {
+                    return (
+                        <Link key={uuidv4()} to={"/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
+                            <Note>
+                                <h2>{el.title}</h2>
+                                <p>{el.body}</p>
+                            </Note>
+                        </Link>
+                    )
+                })}
+            </section>
         </main>
     );
 };
