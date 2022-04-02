@@ -19,13 +19,13 @@ const Home = () => {
         <main>
             <section className='notes-container'>
             { notes.length === 0 && 
-            <Link to="/addnote">
+            <Link to="react-note-app/addnote">
                 <button className='home-newNote-btn'>New note</button> 
             </Link>
             }
                 {notes.map(el => {
                         return (
-                            <Link key={uuidv4()} to={"/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
+                            <Link key={uuidv4()} to={"react-note-app/note/" + el.title.replace(/\s+/g, "-").trim()} state={el}>
                             <Note>
                                 <h2>{el.title}</h2>
                                 <p>{el.body}</p>
