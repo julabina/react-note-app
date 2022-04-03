@@ -48,7 +48,7 @@
 
 @media screen and (max-width : 740px) {
     .form-newNote {
-        margin-top : 180px;
+        margin-top : 110px;
         width : 90%;
     }
 
@@ -63,7 +63,7 @@
     
     .form-newNote textarea {
         font-size:1.2em;
-        
+        height : 250px;
     }
     
     .form-newNote button {
