@@ -71,18 +71,29 @@
 
 @media screen and (max-width : 740px) {
     .form-modNote {
-        margin-top : 30px;
+        margin-top : 180px;
         width : 90%;
+    }
+
+    .form-modNote h2 {
+        margin: -50px 0 90px;
     }
 
     .form-modNote input {
         height: 45px;
+        font-size:1em;
+    }
+    
+    .form-modNote textarea {
+        font-size:1.2em;
+        
     }
     
     .form-modNote button {
+        position: absolute;
         width: 30%;
         height:60px;
-        margin: 20px 35% ;
+        margin: 0px 35% ;
         text-align: center;
         font-size: 1em;
     }
@@ -92,6 +103,10 @@
         left:10px;
         width: auto;
         height:40px;
+    }
+
+    .form-modNote button:hover {
+        background-color: transparent;
     }
 
     .cancelMod-btn:hover {

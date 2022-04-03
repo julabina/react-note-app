@@ -48,19 +48,34 @@
 
 @media screen and (max-width : 740px) {
     .form-newNote {
-        margin-top : 30px;
+        margin-top : 180px;
         width : 90%;
+    }
+
+    .form-newNote h2 {
+        margin: -50px 0 90px;
     }
 
     .form-newNote input {
         height: 45px;
+        font-size:1em;
+    }
+    
+    .form-newNote textarea {
+        font-size:1.2em;
+        
     }
     
     .form-newNote button {
+        position: absolute;
         width: 30%;
         height:60px;
-        margin: 20px 35% ;
+        margin: 0 35% ;
         text-align: center;
         font-size: 1em;
+    }
+
+    .form-newNote button:hover {
+        background-color: transparent;
     }
 }

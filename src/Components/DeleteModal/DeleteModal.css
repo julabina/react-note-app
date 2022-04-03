@@ -68,7 +68,7 @@
     }
     
     .modalDelete-btn:hover {
-        background : cyan;
+        background : transparent;
     }
 
     .delete-icon {
