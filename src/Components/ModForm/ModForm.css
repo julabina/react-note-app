@@ -67,3 +67,34 @@
 .cancelMod-btn:hover {
     background-color: cyan;
 }
+
+
+@media screen and (max-width : 740px) {
+    .form-modNote {
+        margin-top : 30px;
+        width : 90%;
+    }
+
+    .form-modNote input {
+        height: 45px;
+    }
+    
+    .form-modNote button {
+        width: 30%;
+        height:60px;
+        margin: 20px 35% ;
+        text-align: center;
+        font-size: 1em;
+    }
+
+    .cancelMod-btn {
+        top:90px;
+        left:10px;
+        width: auto;
+        height:40px;
+    }
+
+    .cancelMod-btn:hover {
+        background-color: transparent;
+    }
+}

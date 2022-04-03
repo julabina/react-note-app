@@ -47,7 +47,7 @@ const ModForm = (props) => {
                 <form onSubmit={handleModif} className='form-modNote'> 
                     <h2>Modify note</h2>
                     <label htmlFor="modTitle">Title :</label>
-                    <input onChange={updateInput} type="text" id="modTitle" placeholder='Enter the title' value={modifDatas.title} className="inp-1" required/>
+                    <input onChange={updateInput} type="text" id="modTitle" placeholder='Enter the title' value={modifDatas.title} className="inp-1" autoComplete='off' required/>
                     <label htmlFor="modBody">Note :</label>
                     <textarea onChange={updateInput} id='modBody' placeholder='Enter the note' value={modifDatas.body} className="inp-2" required/>
                     <button>Modify</button>

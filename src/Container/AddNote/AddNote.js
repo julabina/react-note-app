@@ -57,7 +57,7 @@ const AddNote = () => {
                 <form onSubmit={submitNew} className='form-newNote'> 
                     <h2>Add new note</h2>
                     <label htmlFor="newTitle">Title :</label>
-                    <input onChange={updateInput} type="text" id="newTitle" placeholder='Enter the title' value={inputDatas.title} className="inp-1" required/>
+                    <input onChange={updateInput} type="text" id="newTitle" placeholder='Enter the title' value={inputDatas.title} className="inp-1" autoComplete='off' required/>
                     <label htmlFor="newBody">Note :</label>
                     <textarea onChange={updateInput} id='newBody' placeholder='Enter the note' value={inputDatas.body} className="inp-2" required/>
                     <button>Add</button>

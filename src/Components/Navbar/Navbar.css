@@ -40,3 +40,26 @@ header h1 {
 .header-link--active {
     background : cyan;
 }
+
+@media screen and (max-width : 740px) {
+    header {
+        justify-content: space-between;
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        text-align:right;
+        margin-right: 10px;
+        width: 50px;
+    }
+
+    .header-links {
+        position: initial;
+        left: 10px
+    }
+
+    .header-link:hover {
+        color: initial;
+    }
+}

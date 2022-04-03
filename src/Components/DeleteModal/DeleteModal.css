@@ -46,3 +46,32 @@
     border : none;
     cursor:pointer;
 }
+
+@media screen and (max-width : 740px) {
+    .modalDelete-container {
+        width:90%;
+    }
+
+    .modalDelete-container h2 {
+        margin-bottom:30px;
+        text-align: center;
+        font-size: 1.2em;
+    }
+
+    .modalDelete-btnContainer {
+        justify-content: space-around;
+    }
+
+    .modalDelete-btn {
+        padding: 15px;
+        width: 70px;
+    }
+    
+    .modalDelete-btn:hover {
+        background : cyan;
+    }
+
+    .delete-icon {
+        height: 22px
+    }
+}
